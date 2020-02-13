@@ -226,6 +226,20 @@ function animate() {
   camera.position.x +=  -target.x*0.1 ;
   //camera.position.z +=  target.z*0.1 ;
   camera.position.y +=  target.y*0.07 ;
+  
+   
+  starGeo.vertices.forEach(p => {
+        p.velocity += p.acceleration
+        p.y -= p.velocity;
+        
+        if (p.y < -200) {
+          p.y = 200;
+          p.velocity = 0;
+        }
+      });
+      starGeo.verticesNeedUpdate = true;
+      stars.rotation.y +=0.002;
+    
   requestAnimationFrame( animate );
   renderer.render( scene, camera );
 
