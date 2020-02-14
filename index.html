@@ -80,7 +80,7 @@
         scene.add(blueLight);
 
         renderer = new THREE.WebGLRenderer();
-        renderer.setSize(window.innerWidth,window.innerHeight);
+        renderer.setSize(1000,1000);
         scene.fog = new THREE.FogExp2(0x1A0529, 0.001);
         renderer.setClearColor(scene.fog.color);
         document.body.appendChild(renderer.domElement);
