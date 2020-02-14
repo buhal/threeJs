@@ -43,8 +43,7 @@
     <script src="postprocessing.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.1.1/gsap.min.js"></script>
     <script >
-        
-        
+           
       let scene, camera, cloudParticles = [],composer;
        let stars, starGeo
       const windowHalf = new THREE.Vector2( window.innerWidth / 2, window.innerHeight / 2 );
@@ -52,7 +51,7 @@
       const target = new THREE.Vector2();
       var cloud;       
       init();
-      animate(); 
+      
         
       function init() {
        
@@ -176,8 +175,8 @@
             
             
             
-         animate();
-         render();
+        animate();
+        render();
         });
 
       }
@@ -204,7 +203,7 @@
       
         composer.render(0.1);
         requestAnimationFrame(render);
-    
+   
       }
       
    /////////////////////////////////
@@ -214,11 +213,7 @@
 //document.getElementById("test_btn").addEventListener("click", function(){
 //  TweenMax.to(camera.position,10,{y:1, x:1, z:1});
 //});
-        
-        
- 
   
-        
         
 function animate() {
  
@@ -228,8 +223,7 @@ function animate() {
   camera.position.x +=  -target.x*0.1 ;
   //camera.position.z +=  target.z*0.1 ;
   camera.position.y +=  target.y*0.07 ;
-  
-   
+    
   starGeo.vertices.forEach(p => {
         p.velocity += p.acceleration
         p.y -= p.velocity;
@@ -242,13 +236,11 @@ function animate() {
       starGeo.verticesNeedUpdate = true;
       stars.rotation.y +=0.002;
     
+    
   requestAnimationFrame( animate );
-  renderer.render( scene, camera );
+ // renderer.render( scene, camera );
 
 }
-        
-        
-
                     
     </script>
   </body>
